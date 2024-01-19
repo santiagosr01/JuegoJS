@@ -1,18 +1,18 @@
 const prompt = require('prompt-sync')();
 
 const preguntas = [
-    ['¿Cuál es la capital de Francia?', 'Berlín', 'Londres', 'París', 'Madrid', 2],
-    ['¿En qué país se encuentra la Gran Barrera de Coral?', 'Australia', 'Brasil', 'México', 'Sudáfrica', 0],
-    ['¿Cuál es el punto más alto de la Tierra?', 'Monte Everest', 'Monte Kilimanjaro', 'Monte McKinley', 'Monte Aconcagua', 0],
-    ['¿En que ciudad queda el Cerro Kgale?', 'Bangui', 'Gaborone', 'Yamusukro', 'Abuya', 1],
-    ['¿Cuántos planetas hay en nuestro sistema solar?', '8', '9', '10', '11', 0],
-    ['¿Cuál es el símbolo químico del oro?', 'O', 'G', 'Au', 'Ag', 2],
-    ['¿Cuál es la distancia promedio de la Tierra al Sol?', '93 millones de millas', '150 millones de kilómetros', '200 millones de millas', '120 millones de kilómetros', 1],
-    ['¿Quién creo la jeringuilla?', 'Alexander Wood', 'Antoni Edwar', 'Galileo Galilei', 'Sócrates', 0],
-    ['¿¿Cuál fue el primer equipo de Haaland?', 'Getafe', 'CD Botsuana', 'Bengaluru United', 'Bryne F.K', 3],
-    ['¿Cuantos tour de Francia tiene Indurain?', '12', '5', '2', '4', 12],
-    ['¿En que año se retiro Pau Gasol?', '2000', '2008', '2021', '2023', 2],
-    ['¿Cuantos mundiales tiene Fernando Alonso?', '1', '5', '2', '7', 2],
+    ['¿Cuál es la capital de Francia?', 'Berlín', 'Londres', 'París', 'Madrid', 'París'],
+    ['¿En qué país se encuentra la Gran Barrera de Coral?', 'Australia', 'Brasil', 'México', 'Sudáfrica', 'Australia'],
+    ['¿Cuál es el punto más alto de la Tierra?', 'Monte Everest', 'Monte Kilimanjaro', 'Monte McKinley', 'Monte Aconcagua', 'Monte Everest'],
+    ['¿En qué ciudad queda el Cerro Kgale?', 'Bangui', 'Gaborone', 'Yamusukro', 'Abuya', 'Gaborone'],
+    ['¿Cuántos planetas hay en nuestro sistema solar?', '8', '9', '10', '11', '8'],
+    ['¿Cuál es el símbolo químico del oro?', 'O', 'G', 'Au', 'Ag', 'Au'],
+    ['¿Cuál es la distancia promedio de la Tierra al Sol?', '93 millones de millas', '150 millones de kilómetros', '200 millones de millas', '120 millones de kilómetros', '150 millones de kilómetros'],
+    ['¿Quién creó la jeringuilla?', 'Alexander Wood', 'Antoni Edwar', 'Galileo Galilei', 'Sócrates', 'Alexander Wood'],
+    ['¿Cuál fue el primer equipo de Haaland?', 'Getafe', 'CD Botsuana', 'Bengaluru United', 'Bryne F.K', 'Bryne F.K'],
+    ['¿Cuantos Tour de Francia tiene Indurain?', '12', '5', '2', '4', '5'],
+    ['¿En qué año se retiró Pau Gasol?', '2000', '2008', '2021', '2023', '2021'],
+    ['¿Cuántos mundiales tiene Fernando Alonso?', '1', '5', '2', '7', '2'],
 ];
 
 function obtenerPreguntaAleatoria() {
@@ -44,20 +44,19 @@ function jugarTrivial() {
             console.log(`Pregunta: ${pregunta[0]}`);
 
             for (let j = 1; j < pregunta.length - 1; j++) {
-                console.log(`${pregunta[j]}`);
+                console.log(`${j}. ${pregunta[j]}`);
             }
 
-            const respuestaUsuario = parseInt(prompt('Ingresa el número de tu respuesta: '));
+            const respuestaUsuario = prompt('Ingresa tu respuesta: ');
 
-            if (respuestaUsuario === pregunta[pregunta.length - 1]) {
+            if (respuestaUsuario.toLowerCase() === pregunta[pregunta.length - 1].toLowerCase()) {
                 console.log(`¡Correcto, ${jugador.nombre}! Ganaste 10 puntos.\n`);
-                jugador.puntaje += 10;
+                jugador.puntaje += 20;
             } else {
                 console.log(`Respuesta incorrecta. La respuesta correcta es: ${pregunta[pregunta.length - 1]}\n`);
             }
         }
     }
-
     console.log('\nFin del juego. Puntajes finales:');
     jugadores.forEach(jugador => console.log(`${jugador.nombre}: ${jugador.puntaje} puntos`));
 }
