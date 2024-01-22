@@ -1,7 +1,7 @@
 const prompt = require('prompt-sync')();
 
 const preguntas = [
-    ['¿Cuál es la capital de Francia?', 'París'],
+    ['¿Cuál es la capital de Francia?', 'Paris'],
     ['¿En qué país se encuentra la Gran Barrera de Coral?', 'Australia'],
     ['¿Cuál es el punto más alto de la Tierra?', 'Monte Everest'],
     ['¿En qué ciudad queda el Cerro Kgale?', 'Gaborone'],
@@ -51,7 +51,7 @@ function Trivial() {
             const respuestaUsuario = prompt('Ingresa tu respuesta: ');
 
             if (respuestaUsuario === pregunta[1]) {
-                console.log('¡Correcto, ' + jugadores[i] + '! Ganaste 20 puntos.\n');
+                console.log('¡Okeyyyyy , ' + jugadores[i] + '! Ganaste 20 puntos.\n');
                 puntajes[i] += 20;
             } else {
                 console.log('Respuesta incorrecta. La respuesta correcta es: ' + pregunta[1] + '\n');
