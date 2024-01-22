@@ -15,7 +15,7 @@ const preguntas = [
     ['¿Cuántos mundiales tiene Fernando Alonso?', '2'],
 ];
 
-const numeroJugadores = parseInt(prompt('Ingresa el número de jugadores: ')) || 1;
+const numeroJugadores = +prompt('Ingresa el número de jugadores: ') || 1;
 const jugadores = [];
 const puntajes = [];
 
@@ -59,10 +59,12 @@ function Trivial() {
         }
     }
 
-    console.log('\nFin del juego. Puntajes finales:');
+    console.log('\nFin del juego. Puntos finales:');
     jugadores.forEach((jugador, i) => console.log(jugador + ': ' + puntajes[i] + ' puntos'));
 }
 
 Trivial();
+
+
 
 
